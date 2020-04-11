@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Admin routes
+
+Route::group(['admin'], function() {
+	Route::get('admin', 'Admin\IndexController@index');
+});
