@@ -11,6 +11,9 @@ class IndexController extends Controller
 {
     public function index()
     {
+        if (! Admin::guest())
+            return redirect('admin/dashboard');
+
         return view('admin.index');
     }
 
