@@ -26,13 +26,16 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">{{ env('APP_NAME') }} Admin Login</h1>
                                     </div>
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">Invalid E-Mail address or Password</div>
+                                    @endif
                                     <form class="user" method="post" action="">
                                         @csrf
                                         <div class="form-group">
-                                            <input type="email" name="admin_email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            <input type="email" name="admin_email" class="form-control form-control-user" id="admin_email" aria-describedby="emailHelp" placeholder="Enter Email Address..." autocomplete="off">
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" name="admin_password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                            <input type="password" name="admin_password" class="form-control form-control-user" id="admin_password" placeholder="Password" autocomplete="off">
                                         </div>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small">
