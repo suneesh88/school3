@@ -27,6 +27,7 @@
                                         <h1 class="h4 text-gray-900 mb-4">{{ env('APP_NAME') }} Admin Login</h1>
                                     </div>
                                     <form class="user" method="post" action="">
+                                        @csrf
                                         <div class="form-group">
                                             <input type="email" name="admin_email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
                                         </div>

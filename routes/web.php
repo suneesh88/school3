@@ -19,4 +19,5 @@ Route::get('/', function () {
 
 Route::group(['admin'], function() {
 	Route::get('admin', 'Admin\IndexController@index');
+	Route::post('admin', 'Admin\IndexController@login');
 });
