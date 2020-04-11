@@ -8,7 +8,7 @@ class Admin extends Model
 {
     public static function login($email, $password)
     {
-    	$admin = Admin::where('email', $email)->first();
+        $admin = Admin::where('email', $email)->first();
 
         if ($admin)
         {
@@ -20,6 +20,13 @@ class Admin extends Model
             }
         }
 
+        return false;
+    }
+
+    public static function guest()
+    {
+        if (! session('admin_email'))
+            return true;
         return false;
     }
 }

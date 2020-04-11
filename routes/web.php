@@ -20,4 +20,8 @@ Route::get('/', function () {
 Route::group(['admin'], function() {
 	Route::get('admin', 'Admin\IndexController@index');
 	Route::post('admin', 'Admin\IndexController@login');
+
+	Route::middleware(['authAdmin'])->group(function () {
+		Route::get('admin/dashboard', 'Admin\DashboardController@index');
+	});
 });
