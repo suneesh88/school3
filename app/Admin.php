@@ -15,6 +15,7 @@ class Admin extends Model
             if (\Hash::check($password, $admin->password))
             {
                 session(['admin_email' => $admin->email]);
+                session(['admin_name' => $admin->name]);
 
                 return true;
             }
@@ -28,5 +29,10 @@ class Admin extends Model
         if (! session('admin_email'))
             return true;
         return false;
+    }
+
+    public static function logout()
+    {
+        session()->forget(['admin_email', 'admin_name']);
     }
 }

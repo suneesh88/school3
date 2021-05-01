@@ -31,4 +31,11 @@ class IndexController extends Controller
 
         return back();
     }
+
+    public function logout()
+    {
+        Admin::logout();
+
+        return redirect('admin');
+    }
 }
