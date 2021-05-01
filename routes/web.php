@@ -23,5 +23,6 @@ Route::group(['admin'], function() {
 
 	Route::middleware(['authAdmin'])->group(function () {
 		Route::get('admin/dashboard', 'Admin\DashboardController@index');
+		Route::get('admin/logout', 'Admin\IndexController@logout');
 	});
 });
